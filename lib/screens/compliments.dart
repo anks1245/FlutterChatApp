@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_application/models/compliment_model.dart';
 import 'package:flutter_chat_application/models/story_model.dart';
 import 'package:flutter_chat_application/services/ApiService.dart';
+import 'package:flutter_chat_application/widgets/compliment_widget.dart';
 import 'package:flutter_chat_application/widgets/shimmer_loader.dart';
 import 'package:flutter_chat_application/widgets/shimmer_stories_loader.dart';
 
@@ -87,7 +88,9 @@ class _ComplimentScreen extends State<ComplimentsScreen> {
                   return GestureDetector(
                     onTap: () {
                       setState(() {
+                        isComplimentLoading = true;
                         selectedIndex = index;
+                        _fetchCompliments(stories![index].id);
                       });
                     },
                     child: Stack(
@@ -147,7 +150,7 @@ class _ComplimentScreen extends State<ComplimentsScreen> {
                       thickness: 1,
                     ),
                     itemBuilder: (context, index) {
-                      return _buildComplimentsList();
+                      return ComplimentWidget(compliment: compliments![index]);
                     }
                 )
             )
@@ -158,52 +161,4 @@ class _ComplimentScreen extends State<ComplimentsScreen> {
     );
   }
 
-  Widget _buildComplimentsList() {
-    return Column(
-      children: compliments!.map((compliment) {
-        return Column(
-          children: [
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(compliment.profileImage),
-                radius: 25,
-              ),
-              title: Row(
-                children: [
-                  Text(
-                    "${compliment.userName}, ${compliment.age}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                  SizedBox(width: 8),
-                  if (compliment.isNew)
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Text(
-                        "NEW",
-                        style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                ],
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(compliment.message),
-                  SizedBox(height: 4),
-                  Text(
-                    "Connection expires in ${compliment.connectionExpires.hours} hours",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              ),
-            )
-          ],
-        );
-      }).toList(),
-    );
-  }
 }
