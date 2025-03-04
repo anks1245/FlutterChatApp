@@ -49,6 +49,6 @@ dependencies:
 
 ### :pushpin: How to Run the Project
 
-* Clone the repository ``
+* Clone the repository `https://github.com/anks1245/FlutterChatApp.git`
 * Install dependencies: `flutter pub get`
 * Run the application: `flutter run`
