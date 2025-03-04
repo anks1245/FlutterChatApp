@@ -10,7 +10,6 @@ This is a Flutter chat application where users can:
 
 ### :rocket: Features
 
-- **User Authentication**: Secure login and signup functionality.
 - **Stories**: Users can post and view stories.
 - **Compliments**: View compliments received on posted stories.
 - **Chat**: Real-time chat functionality.
@@ -24,7 +23,12 @@ This is a Flutter chat application where users can:
 - **State Management**: SetState/Provider (based on implementation)
 - **Networking**: REST API integration
 
-### :open_file_folder: Folder Structure
+## Mock Api Server
+A Postman mock server has been set up to simulate API requests and responses.
+
+Mock url = `https://3d5117bb-e783-45ef-b3a4-5212213ff42b.mock.pstmn.io`
+
+## :open_file_folder: Folder Structure
 
 ```
 lib/
@@ -37,7 +41,7 @@ lib/
 │── main.dart      # Entry point of the application
 ```
 
-### :tools: Dependencies
+## :tools: Dependencies
 
 ```yaml
 dependencies:
@@ -47,7 +51,7 @@ dependencies:
   shimmer: ^3.0.0
 ```
 
-### :pushpin: How to Run the Project
+## :pushpin: How to Run the Project
 
 * Clone the repository `https://github.com/anks1245/FlutterChatApp.git`
 * Install dependencies: `flutter pub get`
