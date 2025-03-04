@@ -5,7 +5,6 @@ import 'package:flutter_chat_application/models/direct_connection_models.dart';
 import 'package:flutter_chat_application/services/ApiService.dart';
 import 'package:flutter_chat_application/widgets/chat_widget.dart';
 import 'package:flutter_chat_application/widgets/shimmer_loader.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class DirectConnectionsScreen extends StatefulWidget {
   @override

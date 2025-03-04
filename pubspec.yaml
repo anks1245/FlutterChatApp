@@ -37,7 +37,6 @@ dependencies:
   google_fonts: ^6.2.1
   shimmer: ^3.0.0
   dio: ^5.8.0+1
-  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_test:
@@ -62,8 +61,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-     - assets/pin.png
+#  assets:
+#     - assets/pin.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
