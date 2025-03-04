@@ -102,7 +102,7 @@ class _ComplimentScreen extends State<ComplimentsScreen> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(16),
                             child: Image.network(
                               stories![index].imageUrl,
                               width: 120,
